@@ -17,13 +17,14 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
 public class JdbcTimeEntryRepository implements TimeEntryRepository {
 
     @Autowired
-    private  JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
+
+    public JdbcTimeEntryRepository() {
+
+    }
 
     public JdbcTimeEntryRepository(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
-    }
-
-    public JdbcTimeEntryRepository() {
     }
 
     @Override
